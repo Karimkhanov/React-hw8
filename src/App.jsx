@@ -1,15 +1,48 @@
 import React from 'react';
-import PostList from './components/PostList';
-import './App.css'; // Keep or modify for global styles
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from 'react-router-dom';
+
+import RootLayout from './components/RootLayout';
+import Home from './pages/Home';
+import About from './pages/About';
+import CharacterList from './pages/CharacterList';
+import CharacterDetails from './pages/CharacterDetails';
+import Login from './pages/Login';
+import './App.css';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <RootLayout />,
+    children: [
+      {
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: 'about',
+        element: <About />,
+      },
+      {
+        path: 'items',
+        element: <CharacterList />,
+      },
+      {
+        path: 'items/:id',
+        element: <CharacterDetails />,
+      },
+      {
+        path: 'login',
+        element: <Login />,
+      },
+    ],
+  },
+]);
 
 function App() {
-  return (
-    <div className="App">
-      <main>
-        <PostList />
-      </main>
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

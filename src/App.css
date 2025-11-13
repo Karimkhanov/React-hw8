@@ -1,13 +1,5 @@
-/* Add any global styles here */
-body {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  background-color: #96dbe7;
-  margin: 0;
-}
-
-.App {
-  width: 100%;
-  min-height: 100vh;
+main {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
 }
