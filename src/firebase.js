@@ -5,15 +5,22 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth"; // <-- ВАЖНО: импортируем getAuth
 
 // 2. Ваш конфиг, который вы нашли (он правильный)
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+
 const firebaseConfig = {
-  apiKey: "AIzaSyC9By4yPTmlJkNDpyIfdh-QpuVW2ohFrN4",
-  authDomain: "react-7-6381e.firebaseapp.com",
-  projectId: "react-7-6381e",
-  storageBucket: "react-7-6381e.firebasestorage.app",
-  messagingSenderId: "916697350054",
-  appId: "1:916697350054:web:2ffb746ec7a9b6d8e71967",
-  measurementId: "G-7Q84FD63L2"
+  apiKey: import.meta.env.VITE_API_KEY,
+  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_APP_ID,
+  measurementId: import.meta.env.VITE_MEASUREMENT_ID,
 };
+
+const app = initializeApp(firebaseConfig);
+
+export const auth = getAuth(app);
 
 // 3. Инициализируем приложение
 const app = initializeApp(firebaseConfig);
