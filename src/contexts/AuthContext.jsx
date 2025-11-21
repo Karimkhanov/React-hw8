@@ -8,7 +8,7 @@ import {
   signOut,
 } from 'firebase/auth';
 import { auth } from '../firebase';
-import Spinner from '../components/Spinner'; // Мы можем показывать спиннер на весь экран
+import Spinner from '../components/Spinner'; 
 
 const AuthContext = createContext();
 
@@ -48,8 +48,6 @@ export const AuthProvider = ({ children }) => {
     logout,
   };
 
-  // ИСПРАВЛЕНИЕ: Мы всегда рендерим Provider,
-  // а состояние загрузки можно использовать для отображения спиннера
   return (
     <AuthContext.Provider value={value}>
       {loading ? <Spinner /> : children}

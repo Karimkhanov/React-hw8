@@ -1,5 +1,3 @@
-// src/App.jsx
-
 import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import RootLayout from './components/RootLayout';
